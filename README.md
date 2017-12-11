@@ -6,3 +6,4 @@ flask-bootstrap
 flask-moment  
 flask-wtf  
 flask-script  
+flask-sqlalchemy  
