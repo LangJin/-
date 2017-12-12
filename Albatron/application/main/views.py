@@ -1,9 +1,15 @@
+# -*- coding:utf-8 -*-
+'''
+时间：2017-12-11
+作者：浪晋
+说明：客户端的视图、路由
+'''
+from flask import session, url_for, render_template, redirect
 from datetime import datetime
-from flask import render_template, session, redirect, url_for
+from ..models.models import User
+from .. import db
 from . import main
 from .forms import NameForm
-from .. import db
-from ..models import User
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -19,9 +25,9 @@ def index():
             session['known'] = True
         session['name'] = form.name.data
         form.name.data = ''
-        return redirect(url_for('.index'))
+        return redirect(url_for('index'))
     return render_template(
-        'client/index.html',
+        '/client/index.html',
         form=form,
         name=session.get('name'),
         current_time=datetime.utcnow(),
