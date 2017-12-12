@@ -86,7 +86,7 @@
             ]
         },
         {
-            "name": "Python: Flask (0.11.x or later)",
+            "name": "Python: Flask",
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,
