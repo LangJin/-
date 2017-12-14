@@ -7,6 +7,7 @@ flask-moment
 flask-wtf  
 flask-script  
 flask-sqlalchemy  
+flask-migrate  
 # 连接数据库报错解决
 >(1146, "Table 'performance_schema.session_variables' doesn't exist") [SQL: "SHOW VARIABLES LIKE 'sql_mode'"]
 
