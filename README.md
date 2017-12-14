@@ -11,3 +11,4 @@ flask-sqlalchemy
 >(1146, "Table 'performance_schema.session_variables' doesn't exist") [SQL: "SHOW VARIABLES LIKE 'sql_mode'"]
 
 mysql> set @@global.show_compatibility_56=ON;
+# 完成了第一部分了，即将开始编写第二部分。
