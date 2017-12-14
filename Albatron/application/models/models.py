@@ -4,7 +4,7 @@
 作者：Jin
 说明：操作数据库的类
 '''
-from .. import db
+from application import db
 
 
 class Role(db.Model):
