@@ -13,3 +13,4 @@ flask-migrate
 
 mysql> set @@global.show_compatibility_56=ON;
 # 完成了第一部分了，即将开始编写第二部分。
+？
