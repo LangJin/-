@@ -18,8 +18,11 @@ class Role(db.Model):
         admin_role = Role(name='Admin')
         mod_role = Role(name='Moderator')
         user_role = Role(name='User')
-        db.session.add_all(
-            [admin_role, mod_role, user_role])
+        db.session.add(admin_role)
+        db.session.add(mod_role)
+        db.session.add(user_role)
+        # db.session.add_all(
+        #     [admin_role, mod_role, user_role])
         db.session.commit()
 
     def __repr__(self):
@@ -37,8 +40,11 @@ class User(db.Model):
         user_john = User(username='john', role_id=1)
         user_susan = User(username='susan', role_id=1)
         user_david = User(username='david', role_id=3)
-        db.session.add_all(
-            [user_john, user_susan, user_david])
+        db.session.add(user_john)
+        db.session.add(user_susan)
+        db.session.add(user_david)
+        # db.session.add_all(
+        #     [user_john, user_susan, user_david])
         db.session.commit()
 
     def __repr__(self):

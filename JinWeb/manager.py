@@ -3,7 +3,7 @@
 启动文件，在这里对整个项目进行启动，初始化等等
 '''
 from flask_script import Manager, Shell
-from flask import render_template
+# from flask import render_template
 from app.models import User
 from app import create_app, db
 
