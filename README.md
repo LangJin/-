@@ -19,4 +19,5 @@ mysql> set @@global.show_compatibility_56=ON;
 明天完整登陆的核心功能，  
 今天看撕逼五五开去了，没写，哈哈哈哈  
 2017-12-19  
+(1452, 'Cannot add or update a child row: a foreign key constraint fails  
 初始化数据的时候，如果存在表关系，要注意先后顺序。  
