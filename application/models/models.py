@@ -47,7 +47,7 @@ class User(db.Model):
 
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
-    
+
     @staticmethod
     def inituser():
         user_john = User(username='john', role_id=1)
