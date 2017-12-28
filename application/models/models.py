@@ -74,3 +74,8 @@ class Adminhux(db.Model):
     admin_photo = db.Column(db.String(128), default=None)
     email = db.Column(db.String(128), default=None)
     remark = db.Column(db.String(128), default=None)
+
+class Listhux(db.Model):
+    '''文章'''
+    __tablename__ = 'h_list'
+    id = db.Column(db.String(64), unique=True)
