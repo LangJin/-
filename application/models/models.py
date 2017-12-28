@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 '''
 时间：2017-12-12
-作者：Jin
+作者：浪晋
 说明：操作数据库的类
 '''
 from application import db
