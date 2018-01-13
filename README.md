@@ -11,6 +11,9 @@
 或者  
 执行Scripts下的activate.bat  
 
+退出虚拟环境
+```deactivate```  
+
 把已安装的第三方包写入xx.txt  
 ```pip freeze > re.txt```   
 安装txt里的第三方包  
