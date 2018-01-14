@@ -54,9 +54,28 @@ class TodoList(Resource):
         return TODOS[todo_id], 201
 
 
+testdict = {"test": 1111}
+
+
+class Test(Resource):
+    '''
+    parser.add_argument("test", type=str)
+    传入的参数必须是json格式的，并且定义了json的key必须为字符串类型的，名字为test
+    '''
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument("test", type=str)
+        args = parser.parse_args()
+        print(testdict)
+        testdict["test"] = args["test"]
+        # print(testdict)
+        return testdict, 201
+
+
 # Actually setup the Api resource routing here
 
 
+api.add_resource(Test, '/test')
 api.add_resource(TodoList, '/todos')
 api.add_resource(Todo, '/todos/<todo_id>')
 
