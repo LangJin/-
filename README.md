@@ -8,6 +8,7 @@
 
 激活虚拟环境的方式  
 ```F:\MyPython\FlaskWebApp\virtualenv\Scripts\activate```   
+```F:\TestGoGo\FlaskWebApp\virtualenv\Scripts\activate```  
 或者  
 执行Scripts下的activate.bat  
 
@@ -20,3 +21,18 @@
 ```pip install -r re.txt```  
 
 >视图认证，没有认证就反馈登陆
+flask-restful的认证方法
+
+```from flask.ext.httpauth import HTTPBasicAuth
+# ...
+auth = HTTPBasicAuth()
+# ...
+
+class TaskAPI(Resource):
+    decorators = [auth.login_required]
+    # ...
+
+class TaskAPI(Resource):
+    decorators = [auth.login_required]
+    # ...
+```

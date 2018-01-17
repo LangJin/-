@@ -1,13 +1,11 @@
 # -*- coding:utf-8 -*-
 from flask import Flask
-from flask_restful import Api
+from flask_sqlalchemy import SQLAlchemy
+from config import config
 
-
-api = Api()
-
-
+db = SQLAlchemy()
 def create_app(config):
     app = Flask(__name__)
     app.config.from_object(config)
-    api.init_app(app)
+    db.init_app(app)
     return app
