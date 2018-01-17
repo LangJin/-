@@ -1,20 +1,28 @@
 # -*- coding:utf-8 -*-
-from app import db
+from werkzeug.security import generate_password_hash, check_password_hash
+from models import db
 '''
-假装是个数据库
+是个数据库模型
 '''
-userinfo = [
-    {"username": "jin", "password": "a123456"},
-    {"username": "tony", "password": "a123456"},
-    {"username": "tom", "password": "a123456"}
-]
 
 
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, index=True)
-    password = db.Column(db.String(64))
+    # password = db.Column(db.String(64))
+    password_hash = db.Column(db.String(128))
+
+    @property
+    def password(self):
+        raise AttributeError('密码不能读取！')
+
+    @password.setter
+    def password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
     @staticmethod
     def init_db():
@@ -23,8 +31,11 @@ class User(db.Model):
 
     @staticmethod
     def init_datas():
-        user_a = User(username='Jin', password="a123456")
-        user_b = User(username='Ben', password="a123456")
-        user_c = User(username='Len', password="a123456")
+        # user_a = User(username='Jin', password="a123456")
+        # user_b = User(username='Ben', password="a123456")
+        # user_c = User(username='Len', password="a123456")
+        user_a = User(username='Jin')
+        user_b = User(username='Ben')
+        user_c = User(username='Len')
         db.session.add_all([user_a, user_b, user_c])
         db.session.commit()
