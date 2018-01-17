@@ -31,11 +31,8 @@ class User(db.Model):
 
     @staticmethod
     def init_datas():
-        # user_a = User(username='Jin', password="a123456")
-        # user_b = User(username='Ben', password="a123456")
-        # user_c = User(username='Len', password="a123456")
-        user_a = User(username='Jin')
-        user_b = User(username='Ben')
-        user_c = User(username='Len')
+        user_a = User(username='Jin', password="a123456")
+        user_b = User(username='Ben', password="a123456")
+        user_c = User(username='Len', password="a123456")
         db.session.add_all([user_a, user_b, user_c])
         db.session.commit()
