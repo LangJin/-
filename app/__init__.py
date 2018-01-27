@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from config import config
 from .resources.admin import api_admin
+from config import config
 
 
 db = SQLAlchemy()
